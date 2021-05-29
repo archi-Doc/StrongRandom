@@ -1,0 +1,23 @@
+﻿// identifier = "string" /* null: Use the default value. */
+app.name = "LP"
+app.description = "LP by archi-Doc"
+app.datetime = "MM/dd H:mm:ss"
+dialog.ok = "O K"
+dialog.cancel = "キャンセル"
+dialog.yes = "はい"
+dialog.no = "いいえ"
+
+// settings
+settings.title = "設定/情報"
+settings.tab.general = "全般"
+settings.tab.information = "情報"
+settings.language = "表示言語"
+settings.displayscaling = "表示倍率"
+language.en = "英語（English）"
+language.ja = "日本語（Japanese）"
+
+// main
+checkbox.copytoclipboard = "生成後にクリップボードにコピーする"
+button.settings = "設定"
+button.generate.string10 = "ランダムな文字列（10）"
+button.generate.guid = "GUID"

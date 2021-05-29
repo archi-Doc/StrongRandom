@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <StartupObject>Application.App</StartupObject>
+    <ApplicationManifest>App\\app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\LP.ico</ApplicationIcon>
+    <Authors>archi-Doc</Authors>
+    <IncludePackageReferencesDuringMarkupCompilation>true</IncludePackageReferencesDuringMarkupCompilation>
+  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\license.tinyhand" />
+    <None Remove="Resources\LP.ico" />
+    <None Remove="Resources\strings-en.tinyhand" />
+    <None Remove="Resources\strings-en.xml" />
+    <None Remove="Resources\strings-ja.tinyhand" />
+    <None Remove="Resources\strings-ja.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Generated\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\license.tinyhand" />
+    <EmbeddedResource Include="Resources\strings-en.tinyhand" />
+    <EmbeddedResource Include="Resources\strings-ja.tinyhand" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Arc.CrossChannel" Version="0.3.0" />
+    <PackageReference Include="CrossLink" Version="0.12.0" />
+    <PackageReference Include="DryIoc.dll" Version="4.7.7" />
+    <PackageReference Include="FastExpressionCompiler" Version="3.1.0" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Tinyhand" Version="0.14.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\LP.ico" />
+  </ItemGroup>
+
+</Project>
