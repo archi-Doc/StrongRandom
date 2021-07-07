@@ -27,6 +27,7 @@
         <StackPanel>
             <Button x:Name="button10" Content="{Arc:C4 button.generate.string10}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{Binding CommandGenerate}" CommandParameter="String10"/>
             <Button x:Name="buttonGuid" Content="{Arc:C4 button.generate.guid}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{Binding CommandGenerate}" CommandParameter="Guid"/>
+            <Button x:Name="buttonHex8" Content="{Arc:C4 button.generate.hex8}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{Binding CommandGenerate}" CommandParameter="Hex8"/>
         </StackPanel>
 
     </StackPanel>

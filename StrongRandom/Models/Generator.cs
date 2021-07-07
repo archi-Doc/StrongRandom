@@ -15,6 +15,7 @@ namespace StrongRandom.Models
     {
         String10,
         Guid,
+        Hex8,
     }
 
     public class Generator
@@ -35,9 +36,30 @@ namespace StrongRandom.Models
                 case GenerateId.String10:
                     return this.GenerateString(10);
 
+                case GenerateId.Hex8:
+                    return this.GenerateHex(8);
+
                 default:
                     return string.Empty;
             }
+        }
+
+        private string GenerateHex(int length)
+        {
+            var chars = new char[length];
+
+Generate:
+            for (var n = 0; n < length; n++)
+            {
+                chars[n] = this.GetChar(CharKind.Hexadecimal);
+            }
+
+            if (!this.ContainsAll(chars, CharKind.Hexadecimal))
+            {
+                goto Generate;
+            }
+
+            return "0x" + new string(chars);
         }
 
         private string GenerateString(int length)
@@ -61,6 +83,7 @@ Generate:
         private enum CharKind
         {
             NumberAlphabet,
+            Hexadecimal,
         }
 
         private char GetChar(CharKind kind)
@@ -88,6 +111,18 @@ Generate:
                         }
                     }
 
+                case CharKind.Hexadecimal:
+                    u = this.GetUInt() % (10 + 6);
+                    if (u < 10)
+                    {
+                        return (char)('0' + u);
+                    }
+                    else
+                    {
+                        u -= 10;
+                        return (char)('a' + u);
+                    }
+
                 default:
                     throw new InvalidOperationException();
             }
@@ -107,6 +142,18 @@ Generate:
                         return false;
                     }
                     else if (!chars.Any(a => a >= 'A' && a <= 'Z'))
+                    {
+                        return false;
+                    }
+
+                    return true;
+
+                case CharKind.Hexadecimal:
+                    if (!chars.Any(a => a >= '0' && a <= '9'))
+                    {
+                        return false;
+                    }
+                    else if (!chars.Any(a => a >= 'a' && a <= 'f'))
                     {
                         return false;
                     }
