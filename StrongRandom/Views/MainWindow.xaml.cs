@@ -114,7 +114,7 @@ Released under the MIT license
                 }
                 else if (id == MessageId.DataFolder)
                 {
-                    this.Notification(new NotificationMessage(App.LocalDataFolder));
+                    // this.Notification(new NotificationMessage(App.LocalDataFolder));
                     System.Diagnostics.Process.Start("Explorer.exe", App.LocalDataFolder);
                 }
                 else if (id == MessageId.DisplayScaling)

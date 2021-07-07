@@ -97,15 +97,13 @@ Released under the MIT license
             this.information_text.Inlines.Add(hl);
             this.information_text.Inlines.Add("\r\n\r\n    ");
 
-            var h = new Hyperlink[4];
+            var h = new Hyperlink[3];
             h[0] = new Hyperlink() { Command = this.LicenseTextCommand, CommandParameter = "license.dryioc" };
             h[0].Inlines.Add("DryIoc");
             h[1] = new Hyperlink() { Command = this.LicenseTextCommand, CommandParameter = "license.prism" };
             h[1].Inlines.Add("Prism Library");
             h[2] = new Hyperlink() { Command = this.LicenseTextCommand, CommandParameter = "license.messagepack" };
             h[2].Inlines.Add("MessagePack for C#");
-            h[3] = new Hyperlink() { Command = this.LicenseTextCommand, CommandParameter = "license.messagepipe" };
-            h[3].Inlines.Add("MessagePipe");
 
             foreach (var x in h)
             {
@@ -149,6 +147,11 @@ Released under the MIT license
         private void SettingsButtonCancel(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void SettingsButtonFolder(object sender, RoutedEventArgs e)
+        {
+            this.ViewService.MessageID(MessageId.DataFolder);
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
