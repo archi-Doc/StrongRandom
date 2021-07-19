@@ -19,7 +19,7 @@ namespace StrongRandom.Models
 
     public class Generator
     {
-        private RNGCryptoServiceProvider provider = new();
+        // private RNGCryptoServiceProvider provider = new();
 
         public Generator()
         {
@@ -65,26 +65,27 @@ Generate:
 
         private char GetChar(CharKind kind)
         {
-            uint u;
+            int i;
             switch (kind)
             {
                 case CharKind.NumberAlphabet:
-                    u = this.GetUInt() % (10 + 26 + 26);
-                    if (u < 10)
+                    i = RandomNumberGenerator.GetInt32(10 + 26 + 26);
+                    // u = this.GetUInt() % (10 + 26 + 26);
+                    if (i < 10)
                     {
-                        return (char)('0' + u);
+                        return (char)('0' + i);
                     }
                     else
                     {
-                        u -= 10;
-                        if (u < 26)
+                        i -= 10;
+                        if (i < 26)
                         {
-                            return (char)('a' + u);
+                            return (char)('a' + i);
                         }
                         else
                         {
-                            u -= 26;
-                            return (char)('A' + u);
+                            i -= 26;
+                            return (char)('A' + i);
                         }
                     }
 
@@ -118,11 +119,11 @@ Generate:
             }
         }
 
-        private uint GetUInt()
+        /*private uint GetUInt()
         {
             Span<byte> b = stackalloc byte[4];
             this.provider.GetBytes(b);
             return BitConverter.ToUInt32(b);
-        }
+        }*/
     }
 }
