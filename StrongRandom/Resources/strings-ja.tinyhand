@@ -1,6 +1,6 @@
 ﻿// identifier = "string" /* null: Use the default value. */
-app.name = "LP"
-app.description = "LP by archi-Doc"
+app.name = "Lp"
+app.description = "Lp by archi-Doc"
 app.datetime = "MM/dd H:mm:ss"
 dialog.ok = "O K"
 dialog.cancel = "キャンセル"

@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <StartupObject>Application.App</StartupObject>
     <ApplicationManifest>App\\app.manifest</ApplicationManifest>
-    <ApplicationIcon>Resources\LP.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Lp.ico</ApplicationIcon>
     <Authors>archi-Doc</Authors>
     <IncludePackageReferencesDuringMarkupCompilation>true</IncludePackageReferencesDuringMarkupCompilation>
   <RuntimeIdentifier>win-x64</RuntimeIdentifier>
@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <None Remove="Resources\license.tinyhand" />
-    <None Remove="Resources\LP.ico" />
+    <None Remove="Resources\Lp.ico" />
     <None Remove="Resources\strings-en.tinyhand" />
     <None Remove="Resources\strings-en.xml" />
     <None Remove="Resources\strings-ja.tinyhand" />
@@ -53,7 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\LP.ico" />
+    <Resource Include="Resources\Lp.ico" />
   </ItemGroup>
 
 </Project>
