@@ -84,7 +84,13 @@ public partial class MainViewModel
                     this.ResultTextValue = this.generator.Generate(id);
                     if (this.ToggleCopyToClipboard)
                     {
-                        Clipboard.SetText(this.ResultTextValue);
+                        try
+                        {
+                            Clipboard.SetText(this.ResultTextValue);
+                        }
+                        catch
+                        {
+                        }
                     }
 
                     this.ViewService.MessageID(MessageId.SelectResultText);

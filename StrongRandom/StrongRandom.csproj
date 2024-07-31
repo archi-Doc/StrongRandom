@@ -10,8 +10,6 @@
     <ApplicationIcon>Resources\Lp.ico</ApplicationIcon>
     <Authors>archi-Doc</Authors>
     <IncludePackageReferencesDuringMarkupCompilation>true</IncludePackageReferencesDuringMarkupCompilation>
-  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-  <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
