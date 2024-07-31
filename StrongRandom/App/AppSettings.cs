@@ -41,5 +41,9 @@ namespace StrongRandom
         public void OnBeforeSerialize()
         {
         }
+
+        public void OnAfterReconstruct()
+        {
+        }
     }
 }

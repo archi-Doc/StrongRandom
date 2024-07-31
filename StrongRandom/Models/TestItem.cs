@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CrossLink;
 using Tinyhand;
+using ValueLink;
 
 namespace StrongRandom
 {
     [TinyhandObject]
-    [CrossLinkObject]
+    [ValueLinkObject]
     public partial class TestItem
     {
         [KeyAsName]

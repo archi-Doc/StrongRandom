@@ -10,16 +10,15 @@ using System.Windows.Media;
 using Application;
 using Arc.Mvvm;
 using Arc.WPF;
-using CrossChannel;
-using CrossLink;
 using StrongRandom.Models;
 using StrongRandom.ViewServices;
+using ValueLink;
 
 #pragma warning disable SA1201 // Elements should appear in the correct order
 
 namespace StrongRandom
 {
-    [CrossLinkObject]
+    [ValueLinkObject]
     public partial class MainViewModel
     {
         private IMainViewService ViewService => App.Resolve<IMainViewService>(); // To avoid a circular dependency, get an instance when necessary.
@@ -87,10 +86,10 @@ namespace StrongRandom
                     (param) =>
                     { // execute
                         var id = (GenerateId)Enum.Parse(typeof(GenerateId), param!);
-                        this.ResultText = this.generator.Generate(id);
+                        this.ResultTextValue = this.generator.Generate(id);
                         if (this.ToggleCopyToClipboard)
                         {
-                            Clipboard.SetText(this.ResultText);
+                            Clipboard.SetText(this.ResultTextValue);
                         }
 
                         this.ViewService.MessageID(MessageId.SelectResultText);

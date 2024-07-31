@@ -72,5 +72,9 @@ namespace Arc.WPF
                 this.BrushColor = 0;
             }
         }
+
+        public void OnAfterReconstruct()
+        {
+        }
     }
 }
