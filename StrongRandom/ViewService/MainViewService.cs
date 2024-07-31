@@ -11,14 +11,13 @@ using Arc.WPF;
 using DryIoc;
 using StrongRandom.Views;
 
-namespace StrongRandom.ViewServices
+namespace StrongRandom.ViewServices;
+
+public interface IMainViewService
 {
-    public interface IMainViewService
-    {
-        void Notification(NotificationMessage msg); // Notification Message
+    void Notification(NotificationMessage msg); // Notification Message
 
-        void MessageID(MessageId id); // Message Id
+    void MessageID(MessageId id); // Message Id
 
-        Task<MessageBoxResult> Dialog(DialogParam p); // Dialog
-    }
+    Task<MessageBoxResult> Dialog(DialogParam p); // Dialog
 }

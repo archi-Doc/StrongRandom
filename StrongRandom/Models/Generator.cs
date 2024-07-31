@@ -1,11 +1,8 @@
 ﻿// Copyright (c) All contributors. All rights reserved. Licensed under the MIT license.
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 #pragma warning disable SA1602 // Enumeration items should be documented
 
@@ -113,15 +110,15 @@ Generate:
                 }
 
             case CharKind.Hexadecimal:
-                u = this.GetUInt() % (10 + 6);
-                if (u < 10)
+                i = RandomNumberGenerator.GetInt32(10 + 6);
+                if (i < 10)
                 {
-                    return (char)('0' + u);
+                    return (char)('0' + i);
                 }
                 else
                 {
-                    u -= 10;
-                    return (char)('a' + u);
+                    i -= 10;
+                    return (char)('a' + i);
                 }
 
             default:
