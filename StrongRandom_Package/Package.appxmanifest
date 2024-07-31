@@ -7,12 +7,12 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="SunriseInc.LP"
+    Name="Sunrise.Lp"
     Publisher="CN=93DD8127-F723-438C-871E-AF0B49015316"
-    Version="0.2.0.0" />
+    Version="0.3.0.0" />
 
   <Properties>
-    <DisplayName>LP</DisplayName>
+    <DisplayName>Lp</DisplayName>
     <PublisherDisplayName>Sunrise Inc.</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
@@ -31,8 +31,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="LP"
-        Description="LP is a simple program that generates a random string or GUID."
+        DisplayName="Lp"
+        Description="Lp is a simple program that generates a random string or GUID."
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">

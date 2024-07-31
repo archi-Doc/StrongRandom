@@ -22,7 +22,7 @@
             <CheckBox x:Name="toggleCopyToClipboard" Content="{Arc:C4 checkbox.copytoclipboard}" IsChecked="{Binding ToggleCopyToClipboard}" HorizontalAlignment="Left" VerticalAlignment="Center" />
         </DockPanel>
 
-        <TextBox x:Name="textBox1" Height="30" TextWrapping="Wrap" Text="{Binding ResultText}" VerticalAlignment="Top" Margin="4" IsReadOnly="True"/>
+        <TextBox x:Name="textBox1" Height="30" TextWrapping="Wrap" Text="{Binding ResultTextValue}" VerticalAlignment="Top" Margin="4" IsReadOnly="True"/>
    
         <StackPanel>
             <Button x:Name="button10" Content="{Arc:C4 button.generate.string10}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{Binding CommandGenerate}" CommandParameter="String10"/>
