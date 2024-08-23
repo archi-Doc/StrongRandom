@@ -20,16 +20,35 @@ Navigation = {
     Exit = "終了"
 }
 
+// dialog
+Dialog = 
+{
+    Ok = "O K"
+    Cancel = "キャンセル"
+    Yes = "はい"
+    No = "いいえ"
+    Exit = "終了してもよろしいですか？"
+    Message = "イエス or ノー？"
+}
+
 // settings
 Settings = {
-DataFolder = "データフォルダ"
-Open = "開く"
-Language = "表示言語"
-DisplayScaling = "表示倍率"
+    DataFolder = "データフォルダ"
+    Open = "開く"
+    Language = "表示言語"
+    DisplayScaling = "表示倍率"
 }
 
 // other
 Language = {
     En = "英語（English）"
     Ja = "日本語（Japanese）"
+}
+
+Button = {
+    Text = "Notification message"
+    Settings = "Settings"
+    DataFolder = "DataFolder"
+    AddItem = "Add"
+    ClearItem = "Clear"
 }

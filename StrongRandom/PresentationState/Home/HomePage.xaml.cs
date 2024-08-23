@@ -14,6 +14,11 @@ public sealed partial class HomePage : Page
     {
         this.InitializeComponent();
         this.State = App.GetService<HomePageState>();
+
+        this.textBox1.Loaded += (s, e) =>
+        {
+            this.textBox1.Focus(Microsoft.UI.Xaml.FocusState.Programmatic);
+        };
     }
 
     protected override void OnNavigatedFrom(NavigationEventArgs e)

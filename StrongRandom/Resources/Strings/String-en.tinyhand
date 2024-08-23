@@ -7,7 +7,6 @@ button_generate_string10 = "Random characters (10)"
 button_generate_guid = "GUID"
 button_generate_hex8 = "Hexadecimal number（8）"
 
-
 App = {
     Name = "StrongRandom" // Name
     Description = "description"
@@ -19,17 +18,6 @@ Navigation = {
     Settings = "Settings"
     Information = "Information"
     Exit = "Exit"
-}
-
-Presentation = {
-    Enter = "Enter the number:"
-    Button = "Baibain"
-}
-
-State = {
-    Enter = "Enter the number:"
-    Button = "3Baibain"
-    ExitButton = "Exit"
 }
 
 // dialog
@@ -63,23 +51,4 @@ Button = {
     DataFolder = "DataFolder"
     AddItem = "Add"
     ClearItem = "Clear"
-}
-Tooltip = {
-    Button = "This is a button."
-    Sample = "Sample"
-}
-
-TimeText = "Current time is {0:MM/dd H:mm:ss}."
-
-ListView = {
-// ListView
-    Header = {
-        Id = "Id"
-        Time = "Time"
-    }
-
-    Menu = {
-        Increment = "increment"
-        Decrement = "decrement"
-    }
 }
