@@ -8,7 +8,7 @@ button_generate_guid = "GUID"
 button_generate_hex8 = "16進数（8）"
 
 App = {
-    Name = "StrongRandom" // Name
+    Name = "Lp" // Name
     Description = "説明文"
     DateTime = "MM/dd H:mm:ss"
 }
