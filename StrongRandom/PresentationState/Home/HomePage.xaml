@@ -9,7 +9,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Padding="12">
-        <TextBlock>Hello, World!</TextBlock>
-    </Grid>
+    <StackPanel Padding="12">
+        <CheckBox x:Name="toggleCopyToClipboard" Content="{Arc:Stringer Source=checkbox_copytoclipboard}" IsChecked="{x:Bind State.ToggleCopyToClipboard, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+        <TextBox x:Name="textBox1" Height="30" TextWrapping="Wrap" Text="{x:Bind State.ResultTextValue, Mode=TwoWay}" VerticalAlignment="Top" Margin="4" IsReadOnly="True"/>
+
+        <Button x:Name="button10" Margin="4" Content="{Arc:Stringer Source=button_generate_string10}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{x:Bind State.GenerateCommand}" CommandParameter="String10"/>
+        <Button x:Name="buttonGuid" Margin="4" Content="{Arc:Stringer Source=button_generate_guid}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{x:Bind State.GenerateCommand}" CommandParameter="Guid"/>
+        <Button x:Name="buttonHex8" Margin="4" Content="{Arc:Stringer Source=button_generate_hex8}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{x:Bind State.GenerateCommand}" CommandParameter="Hex8"/>
+
+    </StackPanel>
+
 </Page>

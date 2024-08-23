@@ -31,11 +31,8 @@ public class AppUnit : UnitBase, IUnitPreparable, IUnitExecutable
                 context.AddTransient<SimpleWindow>();
                 context.AddTransient<SimpleState>();
                 context.AddTransient<NaviWindow>();
-                context.AddTransient<HomePage>();
-                context.AddTransient<HomeState>();
-                context.AddTransient<PresentationPage>();
-                context.AddTransient<StatePage>(); // AddSingleton
-                context.AddTransient<StatePageState>();
+                context.AddTransient<HomePage>(); // AddSingleton
+                context.AddTransient<HomePageState>();
                 context.AddTransient<SettingsPage>();
                 context.AddTransient<SettingsState>();
                 context.AddTransient<InformationPage>();

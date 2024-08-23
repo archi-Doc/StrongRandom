@@ -1,7 +1,12 @@
-5// identifier = "string" /* null: Use the default value. */
+// identifier = "string" /* null: Use the default value. */
 
-Test1 = "Test1"
-Test2 = "Test2"
+// main
+checkbox_copytoclipboard = "Copy generated text to clipboard"
+button_settings = "Settings"
+button_generate_string10 = "Random characters (10)"
+button_generate_guid = "GUID"
+button_generate_hex8 = "Hexadecimal number（8）"
+
 
 App = {
     Name = "StrongRandom" // Name
@@ -10,9 +15,7 @@ App = {
 }
 
 Navigation = {
-    Home = "1. Home"
-    Presentation = "2. Presentation"
-    State = "3. State"
+    Home = "Home"
     Settings = "Settings"
     Information = "Information"
     Exit = "Exit"
