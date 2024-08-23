@@ -1,14 +1,15 @@
 ﻿// Copyright (c) All contributors. All rights reserved. Licensed under the MIT license.
 
-using System.Windows.Media;
-using Arc.WPF;
-using Tinyhand;
+using Arc.WinUI;
+using Microsoft.UI;
 
 namespace StrongRandom;
 
 [TinyhandObject]
 public partial class AppOptions
 { // Application Options
+    public const string Filename = "AppOptions.tinyhand";
+
     public AppOptions()
     {
     }

@@ -1,24 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.18362.0</TargetFramework>
-    <UseWPF>true</UseWPF>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <RootNamespace>StrongRandom</RootNamespace>
+    <ApplicationManifest>App\App.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\App.ico</ApplicationIcon>
+    <Platforms>x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+    <NoWarn>$(NoWarn);NETSDK1206</NoWarn>
+
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <StartupObject>Application.App</StartupObject>
-    <ApplicationManifest>App\\app.manifest</ApplicationManifest>
-    <ApplicationIcon>Resources\Lp.ico</ApplicationIcon>
-    <Authors>archi-Doc</Authors>
-    <IncludePackageReferencesDuringMarkupCompilation>true</IncludePackageReferencesDuringMarkupCompilation>
+    <StartupObject>StrongRandom.App</StartupObject>
+    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\license.tinyhand" />
-    <None Remove="Resources\Lp.ico" />
-    <None Remove="Resources\strings-en.tinyhand" />
-    <None Remove="Resources\strings-en.xml" />
-    <None Remove="Resources\strings-ja.tinyhand" />
-    <None Remove="Resources\strings-ja.xml" />
+    <PackageReference Include="Arc.WinUI" Version="0.4.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" Version="8.0.240109" />
+    <PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.0.240109" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240802000" />
+    <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,32 +33,44 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Views\HomePage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="App\AppClass.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\license.tinyhand" />
-    <EmbeddedResource Include="Resources\strings-en.tinyhand" />
-    <EmbeddedResource Include="Resources\strings-ja.tinyhand" />
+    <ApplicationDefinition Include="App\AppClass.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Arc.CrossChannel" Version="1.3.0" />
-    <PackageReference Include="DryIoc.dll" Version="5.4.3" />
-    <PackageReference Include="FastExpressionCompiler" Version="4.2.1" />
-    <PackageReference Include="Serilog" Version="4.0.1" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
-    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+    <EmbeddedResource Include="Resources\Strings\License.tinyhand" />
+    <EmbeddedResource Include="Resources\Strings\String-en.tinyhand" />
+    <EmbeddedResource Include="Resources\Strings\String-ja.tinyhand" />
+    <EmbeddedResource Include="Resources\App.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Arc.Crypto" Version="1.24.4" />
+    <PackageReference Include="Arc.Threading" Version="0.28.2" />
+    <PackageReference Include="Arc.Unit" Version="0.16.0" />
+    <PackageReference Include="CrystalData" Version="0.17.5" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Tinyhand" Version="0.78.2" />
-    <PackageReference Include="ValueLink" Version="0.61.2" />
+    <PackageReference Include="Tinyhand" Version="0.79.3" />
+    <PackageReference Include="ValueLink" Version="0.61.3" />
+    <PackageReference Include="WinUIEx" Version="2.3.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Lp.ico" />
+    <Folder Include="PresentationState\Settings\" />
   </ItemGroup>
 
 </Project>
