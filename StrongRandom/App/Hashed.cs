@@ -2,7 +2,7 @@
 
 namespace StrongRandom;
 
-[TinyhandGeneratorOption(AttachDebugger = false, GenerateToFile = false)]
-internal class GeneratorOption
+[TinyhandGenerateHash("../Resources/Strings/String-en.tinyhand")]
+internal static partial class Hashed
 {
 }

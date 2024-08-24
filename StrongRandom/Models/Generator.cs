@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 
 #pragma warning disable SA1602 // Enumeration items should be documented
 
-namespace StrongRandom.Models;
+namespace StrongRandom;
 
 public enum GenerateId
 {
