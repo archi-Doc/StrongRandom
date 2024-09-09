@@ -21,10 +21,10 @@
   <ItemGroup>
     <PackageReference Include="Arc.WinUI" Version="0.4.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" Version="8.0.240109" />
-    <PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.0.240109" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" Version="8.1.240821" />
+    <PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.1.240821" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240802000" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240829007" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
@@ -56,16 +56,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Arc.Crypto" Version="1.24.4" />
+    <PackageReference Include="Arc.Crypto" Version="1.26.1" />
     <PackageReference Include="Arc.Threading" Version="0.28.2" />
     <PackageReference Include="Arc.Unit" Version="0.16.0" />
-    <PackageReference Include="CrystalData" Version="0.17.5" />
+    <PackageReference Include="CrystalData" Version="0.18.1" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Tinyhand" Version="0.79.3" />
-    <PackageReference Include="ValueLink" Version="0.61.3" />
+    <PackageReference Include="Tinyhand" Version="0.81.4" />
+    <PackageReference Include="ValueLink" Version="0.63.2" />
     <PackageReference Include="WinUIEx" Version="2.3.4" />
   </ItemGroup>
 
