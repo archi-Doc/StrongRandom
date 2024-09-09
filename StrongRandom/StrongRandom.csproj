@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
-    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
-    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <TargetFramework>$(SamplesTargetFrameworkMoniker)</TargetFramework>
+    <TargetPlatformVersion>$(WindowsSdkTargetPlatformVersion)</TargetPlatformVersion>
+    <TargetPlatformMinVersion>$(WindowsAppSdkTargetPlatformVersion)</TargetPlatformMinVersion>
     <RootNamespace>StrongRandom</RootNamespace>
     <ApplicationManifest>App\App.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\App.ico</ApplicationIcon>
@@ -19,12 +19,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Arc.WinUI" Version="0.4.0" />
+    <PackageReference Include="Arc.WinUI" Version="0.5.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" Version="8.1.240821" />
     <PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.1.240821" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240829007" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="$(WindowsAppSdkPackageVersion)" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 

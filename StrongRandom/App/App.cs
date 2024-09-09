@@ -146,7 +146,7 @@ public static partial class App
         try
         {
             WinRT.ComWrappersSupport.InitializeComWrappers();
-            XamlCheckProcessRequirements();
+            // XamlCheckProcessRequirements();
             Application.Start(_ =>
             {
                 uiDispatcherQueue = DispatcherQueue.GetForCurrentThread();
@@ -218,8 +218,8 @@ public static partial class App
     public static void TryEnqueueOnUI(DispatcherQueueHandler callback)
         => uiDispatcherQueue.TryEnqueue(callback);
 
-    [LibraryImport("Microsoft.ui.xaml.dll")]
-    private static partial void XamlCheckProcessRequirements();
+    // [LibraryImport("Microsoft.ui.xaml.dll")]
+    // private static partial void XamlCheckProcessRequirements();
 
     private static void PrepareDataFolder()
     {
