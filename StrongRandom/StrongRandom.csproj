@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Arc.WinUI" Version="0.5.0" />
+    <PackageReference Include="Arc.WinUI" Version="0.5.1" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" Version="8.1.240821" />
     <PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.1.240821" />
