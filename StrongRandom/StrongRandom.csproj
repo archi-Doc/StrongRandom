@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>$(SamplesTargetFrameworkMoniker)</TargetFramework>
-    <TargetPlatformVersion>$(WindowsSdkTargetPlatformVersion)</TargetPlatformVersion>
-    <TargetPlatformMinVersion>$(WindowsAppSdkTargetPlatformVersion)</TargetPlatformMinVersion>
+    <TargetFramework>$(ProjectTargetFramework)</TargetFramework>
+    <TargetPlatformVersion>$(ProjectTargetPlatformVersion)</TargetPlatformVersion>
+    <TargetPlatformMinVersion>$(ProjectTargetPlatformMinVersion)</TargetPlatformMinVersion>
     <Platforms>x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
@@ -21,12 +21,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Arc.WinUI" Version="0.5.2" />
+    <PackageReference Include="Arc.WinUI" Version="0.4.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" Version="8.1.240821" />
-    <PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.1.240821" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="$(WindowsAppSdkPackageVersion)" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" Version="8.0.240109" />
+    <PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.0.240109" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="$(ProjectBuildToolsVersion)" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="$(ProjectWindowsAppSdkVersion)" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
