@@ -8,6 +8,7 @@
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <PublishProfile>Properties\PublishProfiles\win-$(Platform).pubxml</PublishProfile>
     <RootNamespace>StrongRandom</RootNamespace>
     <ApplicationManifest>App\App.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\App.ico</ApplicationIcon>
@@ -34,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Package.appxmanifest" />
     <None Remove="Views\HomePage.xaml" />
   </ItemGroup>
 
@@ -47,6 +49,12 @@
 
   <ItemGroup>
     <ApplicationDefinition Include="App\AppClass.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
   </ItemGroup>
 
   <ItemGroup>
