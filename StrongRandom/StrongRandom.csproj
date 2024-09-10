@@ -35,7 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Package.appxmanifest" />
     <None Remove="Views\HomePage.xaml" />
   </ItemGroup>
 
@@ -49,12 +48,6 @@
 
   <ItemGroup>
     <ApplicationDefinition Include="App\AppClass.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AppxManifest Include="Package.appxmanifest">
-      <SubType>Designer</SubType>
-    </AppxManifest>
   </ItemGroup>
 
   <ItemGroup>
