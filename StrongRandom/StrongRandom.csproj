@@ -12,7 +12,6 @@
     <ApplicationManifest>App\App.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\App.ico</ApplicationIcon>
     <NoWarn>$(NoWarn);NETSDK1206</NoWarn>
-    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <StartupObject>StrongRandom.App</StartupObject>
