@@ -34,19 +34,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Views\HomePage.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Page Remove="App\AppClass.xaml" />
+    <ApplicationDefinition Include="App\AppClass.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ApplicationDefinition Include="App\AppClass.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,10 +61,6 @@
     <PackageReference Include="Tinyhand" Version="0.81.4" />
     <PackageReference Include="ValueLink" Version="0.63.2" />
     <PackageReference Include="WinUIEx" Version="2.3.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="PresentationState\Settings\" />
   </ItemGroup>
 
 </Project>
