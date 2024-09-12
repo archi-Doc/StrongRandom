@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
+    <WinUISDKReferences>false</WinUISDKReferences>
     <TargetFramework>$(ProjectTargetFramework)</TargetFramework>
     <TargetPlatformVersion>$(ProjectTargetPlatformVersion)</TargetPlatformVersion>
     <TargetPlatformMinVersion>$(ProjectTargetPlatformMinVersion)</TargetPlatformMinVersion>
     <Platforms>x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
-    <PublishProfile>Properties\PublishProfiles\win-$(Platform).pubxml</PublishProfile>
     <RootNamespace>StrongRandom</RootNamespace>
     <ApplicationManifest>App\App.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\App.ico</ApplicationIcon>
@@ -20,12 +20,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Arc.WinUI" Version="0.6.0" />
+    <PackageReference Include="Arc.WinUI" Version="0.7.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" Version="8.0.240109" />
     <PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.0.240109" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="$(ProjectBuildToolsVersion)" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="$(ProjectWindowsAppSdkVersion)" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="$(ProjectBuildToolsVersion)" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
