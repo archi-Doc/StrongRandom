@@ -57,8 +57,10 @@ public partial class NaviWindow : WindowEx, IBasicPresentationService
 
     private async void AppWindow_Closing(AppWindow sender, AppWindowClosingEventArgs args)
     {// The close button of the Window was pressed.
-        args.Cancel = true; // Since the Closing function isn't awaiting, I'll cancel first. Sorry for writing such crappy code.
-        await this.TryExit();
+        // args.Cancel = true; // Since the Closing function isn't awaiting, I'll cancel first. Sorry for writing such crappy code.
+        // await this.TryExit();
+
+        App.Exit();
     }
 
     private void NaviWindow_Activated(object sender, WindowActivatedEventArgs args)
