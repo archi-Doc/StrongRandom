@@ -12,6 +12,7 @@ public enum GenerateId
 {
     String10,
     Guid,
+    GuidUppercase,
     Hex8,
 }
 
@@ -29,6 +30,9 @@ public class Generator
         {
             case GenerateId.Guid:
                 return Guid.NewGuid().ToString();
+
+            case GenerateId.GuidUppercase:
+                return Guid.NewGuid().ToString().ToUpper();
 
             case GenerateId.String10:
                 return this.GenerateString(10);
