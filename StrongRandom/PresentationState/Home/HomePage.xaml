@@ -16,6 +16,7 @@
 
         <Button x:Name="button10" Margin="4" Content="{Arc:Stringer Source=button_generate_string10}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{x:Bind State.GenerateCommand}" CommandParameter="String10"/>
         <Button x:Name="buttonGuid" Margin="4" Content="{Arc:Stringer Source=button_generate_guid}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{x:Bind State.GenerateCommand}" CommandParameter="Guid"/>
+        <Button x:Name="buttonGuidUppercase" Margin="4" Content="{Arc:Stringer Source=button_generate_guid_uppercase}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{x:Bind State.GenerateCommand}" CommandParameter="GuidUppercase"/>
         <Button x:Name="buttonHex8" Margin="4" Content="{Arc:Stringer Source=button_generate_hex8}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Command="{x:Bind State.GenerateCommand}" CommandParameter="Hex8"/>
 
     </StackPanel>

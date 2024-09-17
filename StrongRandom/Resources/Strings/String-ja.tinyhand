@@ -5,6 +5,7 @@ checkbox_copytoclipboard = "生成後にクリップボードにコピーする"
 button_settings = "設定"
 button_generate_string10 = "ランダムな文字列（10）"
 button_generate_guid = "GUID"
+button_generate_guid_uppercase = "GUID（大文字）"
 button_generate_hex8 = "16進数（8）"
 
 App = {
