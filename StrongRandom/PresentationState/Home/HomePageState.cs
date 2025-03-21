@@ -16,10 +16,10 @@ public partial class HomePageState : ObservableObject
     private readonly IBasicPresentationService simpleWindowService;
 
     [ObservableProperty]
-    private string resultTextValue = string.Empty;
+    public partial string ResultTextValue { get; set; } = string.Empty;
 
     [ObservableProperty]
-    private bool toggleCopyToClipboard;
+    public partial bool ToggleCopyToClipboard { get; set; }
 
     public HomePageState(IBasicPresentationService simpleWindowService)
     {
