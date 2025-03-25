@@ -1,22 +1,24 @@
 ﻿// Copyright (c) All contributors. All rights reserved. Licensed under the MIT license.
 
-using Arc.WinUI;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace StrongRandom.State;
+namespace StrongRandom.PresentationState;
 
-public partial class SettingsState : ObservableObject
+public partial class SettingsState : ObservableObject, IState
 {
-    public SettingsState()
+    private readonly App app;
+
+    public SettingsState(App app)
     {
+        this.app = app;
         this.SetLanguageText();
         this.SetScalingText();
     }
 
     private void SetLanguageText()
     {
-        if (LanguageList.LanguageToIdentifier.TryGetValue(App.Settings.Culture, out var identifier))
+        if (LanguageList.LanguageToIdentifier.TryGetValue(this.app.Settings.Culture, out var identifier))
         {
             this.LanguageText = HashedString.GetOrEmpty(identifier);
         }
@@ -32,7 +34,7 @@ public partial class SettingsState : ObservableObject
     {
         try
         {
-            System.Diagnostics.Process.Start("Explorer.exe", App.DataFolder);
+            System.Diagnostics.Process.Start("Explorer.exe", this.app.DataFolder);
         }
         catch
         {
@@ -56,13 +58,13 @@ public partial class SettingsState : ObservableObject
     [RelayCommand]
     private void SelectLanguage(string language)
     {
-        if (App.Settings.Culture == language)
+        if (this.app.Settings.Culture == language)
         {
             return;
         }
 
-        App.Settings.Culture = language;
-        HashedString.ChangeCulture(App.Settings.Culture);
+        this.app.Settings.Culture = language;
+        HashedString.ChangeCulture(this.app.Settings.Culture);
         Arc.WinUI.Stringer.Refresh();
         this.SetLanguageText();
     }
@@ -81,8 +83,8 @@ public partial class SettingsState : ObservableObject
     }
 
     [ObservableProperty]
-    private string languageText = string.Empty;
+    public partial string LanguageText { get; set; } = string.Empty;
 
     [ObservableProperty]
-    private string scalingText = string.Empty;
+    public partial string ScalingText { get; set; } = string.Empty;
 }

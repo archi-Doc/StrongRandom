@@ -1,19 +1,15 @@
 ﻿// Copyright (c) All contributors. All rights reserved. Licensed under the MIT license.
 
-using System.Threading;
-using System.Threading.Tasks;
-using Arc.WinUI;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Windows.ApplicationModel.DataTransfer;
-using WinUIEx.Messaging;
 
-namespace StrongRandom.State;
+namespace StrongRandom.PresentationState;
 
-public partial class HomePageState : ObservableObject
+public partial class HomePageState : ObservableObject, IState
 {
     private readonly Generator generator = new();
-    private readonly IBasicPresentationService simpleWindowService;
+    private readonly IMessageDialogService messageDialogService;
 
     [ObservableProperty]
     public partial string ResultTextValue { get; set; } = string.Empty;
@@ -21,9 +17,9 @@ public partial class HomePageState : ObservableObject
     [ObservableProperty]
     public partial bool ToggleCopyToClipboard { get; set; }
 
-    public HomePageState(IBasicPresentationService simpleWindowService)
+    public HomePageState(IMessageDialogService simpleWindowService)
     {
-        this.simpleWindowService = simpleWindowService;
+        this.messageDialogService = simpleWindowService;
         this.ToggleCopyToClipboard = true;
     }
 

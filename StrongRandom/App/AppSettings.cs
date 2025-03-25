@@ -2,7 +2,7 @@
 
 using Arc.WinUI;
 
-namespace StrongRandom;
+namespace StandardWinUI;
 
 [TinyhandObject(ImplicitKeyAsName = true)]
 public partial class AppSettings

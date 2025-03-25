@@ -1,18 +1,15 @@
 // Copyright (c) All contributors. All rights reserved. Licensed under the MIT license.
 
-using System.Collections.Generic;
-using Arc.WinUI;
 using Microsoft.UI.Xaml.Controls;
-using StrongRandom.State;
 
-namespace StrongRandom.Presentation;
+namespace StrongRandom.PresentationState;
 
 public sealed partial class SettingsPage : Page
 {
-    public SettingsPage()
+    public SettingsPage(App app)
     {
         this.InitializeComponent();
-        this.State = App.GetService<SettingsState>();
+        this.State = app.GetService<SettingsState>();
 
         // language: en, key: Language.En, text: English
         foreach (var x in LanguageList.LanguageToIdentifier)
