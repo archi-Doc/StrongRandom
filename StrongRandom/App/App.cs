@@ -29,9 +29,9 @@ namespace StandardWinUI;
 // Dependencies and data persistence: AppUnit.
 // Presentation-State model: 5.Advanced is equipped with basic functionalities, it is recommended to use this as a template.
 
-// App.GetService<T>() is used to retrieve a service of type T.
 // AppSettings manages the application's settings.
-// IBasicPresentationService.TryExit() attempts to exit the app, while App.Exit() exits the app without confirmation.
+// IApp.GetService<T>() is used to retrieve a service of type T.
+// IApp.TryExit() attempts to exit the app, while IApp.Exit() exits the app without confirmation.
 // NaviWindow_Closed() is called when the main window is closed.
 
 /// <summary>
@@ -40,19 +40,15 @@ namespace StandardWinUI;
 /// </summary>
 public class App : AppBase
 {
-    public const string MutexName = "Arc.StandardWinUI"; // The name of the mutex used to prevent multiple instances of the application. Specify 'string.Empty' to allow multiple instances.
-    public const string DataFolderName = "Arc\\StandardWinUI"; // The folder name for application data.
+    public const string MutexName = "Arc.StrongRandom"; // The name of the mutex used to prevent multiple instances of the application. Specify 'string.Empty' to allow multiple instances.
+    public const string DataFolderName = "Arc\\StrongRandom"; // The folder name for application data.
     public const string DefaultCulture = "en"; // The default culture for the application.
     public const double DefaultFontSize = 14; // The default font size for the application.
-
-    #region FieldAndProperty
 
     /// <summary>
     /// Gets the settings for the application.
     /// </summary>
     public AppSettings Settings { get; private set; } = default!;
-
-    #endregion
 
     private void LoadCrystalData()
     {
@@ -134,10 +130,6 @@ public class App : AppBase
     public App(IServiceProvider serviceProvider)
         : base(serviceProvider)
     {
-    }
-
-    internal void Initialize()
-    {
         this.DataFolder = Entrypoint.DataFolder;
         this.UiDispatcherQueue = Entrypoint.UiDispatcherQueue;
 
@@ -158,8 +150,6 @@ public class App : AppBase
 
         // Title
         this.Title = HashedString.Get(Hashed.App.Name) + " " + this.Version;
-
-        _ = this.GetApplication();
     }
 
     #endregion

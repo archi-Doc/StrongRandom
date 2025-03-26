@@ -7,18 +7,20 @@ namespace StrongRandom.PresentationState;
 
 public partial class SettingsState : ObservableObject, IState
 {
-    private readonly App app;
+    private readonly IApp app;
+    private readonly AppSettings appSettings;
 
-    public SettingsState(App app)
+    public SettingsState(IApp app, AppSettings appSettings)
     {
         this.app = app;
+        this.appSettings = appSettings;
         this.SetLanguageText();
         this.SetScalingText();
     }
 
     private void SetLanguageText()
     {
-        if (LanguageList.LanguageToIdentifier.TryGetValue(this.app.Settings.Culture, out var identifier))
+        if (LanguageList.LanguageToIdentifier.TryGetValue(this.appSettings.Culture, out var identifier))
         {
             this.LanguageText = HashedString.GetOrEmpty(identifier);
         }
@@ -58,13 +60,13 @@ public partial class SettingsState : ObservableObject, IState
     [RelayCommand]
     private void SelectLanguage(string language)
     {
-        if (this.app.Settings.Culture == language)
+        if (this.appSettings.Culture == language)
         {
             return;
         }
 
-        this.app.Settings.Culture = language;
-        HashedString.ChangeCulture(this.app.Settings.Culture);
+        this.appSettings.Culture = language;
+        HashedString.ChangeCulture(this.appSettings.Culture);
         Arc.WinUI.Stringer.Refresh();
         this.SetLanguageText();
     }
