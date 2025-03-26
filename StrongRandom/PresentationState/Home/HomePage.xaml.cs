@@ -9,7 +9,7 @@ public sealed partial class HomePage : Page
 {
     public HomePageState State { get; }
 
-    public HomePage(App app)
+    public HomePage(IApp app)
     {
         this.InitializeComponent();
         this.State = app.GetService<HomePageState>();

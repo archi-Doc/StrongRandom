@@ -9,7 +9,7 @@ public sealed partial class InformationPage : Page
 {
     private const string LicenseUri = "https://opensource.org/licenses/MIT";
 
-    public InformationPage(App app)
+    public InformationPage(IApp app)
     {
         this.InitializeComponent();
         this.State = app.GetService<InformationState>();
