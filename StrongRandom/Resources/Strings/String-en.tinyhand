@@ -8,48 +8,41 @@ button_generate_guid = "GUID"
 button_generate_guid_uppercase = "GUID (uppercase)"
 button_generate_hex8 = "Hexadecimal number（8）"
 
-App = {
-    Name = "Lp" // Name
-    Description = "description"
-    DateTime = "MM/dd H:mm:ss"
-}
+App=
+  Name = "Lp" // Name
+  Description = "description"
+  DateTime = "MM/dd H:mm:ss"
 
-Navigation = {
-    Home = "Home"
-    Settings = "Settings"
-    Information = "Information"
-    Exit = "Exit"
-}
+Navigation=
+  Home = "Home"
+  Settings = "Settings"
+  Information = "Information"
+  Exit = "Exit"
 
 // dialog
-Dialog =
-{
-    Ok = "O K"
-    Cancel = "Cancel"
-    Yes = "Yes"
-    No = "No"
-    Exit = "Are you sure you want to exit?"
-    Message = "Yes or no?"
-}
+Dialog=
+  Ok = "O K"
+  Cancel = "Cancel"
+  Yes = "Yes"
+  No = "No"
+  Exit = "Are you sure you want to exit?"
+  Message = "Yes or no?"
 
 // settings
-Settings = {
-DataFolder = "Data folder"
-Open = "Open"
-Language = "Language"
-DisplayScaling = "Display scaling"
-}
+Settings=
+  DataFolder = "Data folder"
+  Open = "Open"
+  Language = "Language"
+  DisplayScaling = "Display scaling"
 
 // other
-Language = {
-    En = "English (英語）"
-    Ja = "Japanese (日本語)"
-}
+Language=
+  En = "English (英語）"
+  Ja = "Japanese (日本語)"
 
-Button = {
-    Text = "Notification message"
-    Settings = "Settings"
-    DataFolder = "DataFolder"
-    AddItem = "Add"
-    ClearItem = "Clear"
-}
+Button=
+  Text = "Notification message"
+  Settings = "Settings"
+  DataFolder = "DataFolder"
+  AddItem = "Add"
+  ClearItem = "Clear"
