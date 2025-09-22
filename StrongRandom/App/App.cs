@@ -52,9 +52,9 @@ public class App : AppBase
 
     private void LoadCrystalData()
     {
-        var crystalizer = this.GetService<Crystalizer>();
-        crystalizer.PrepareAndLoadAll(false).Wait();
-        this.Settings = crystalizer.GetCrystal<AppSettings>().Data;
+        var crystalControl = this.GetService<CrystalControl>();
+        crystalControl.PrepareAndLoad(false).Wait();
+        this.Settings = crystalControl.GetCrystal<AppSettings>().Data;
     }
 
     /// <summary>
