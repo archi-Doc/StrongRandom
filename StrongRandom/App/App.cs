@@ -48,7 +48,7 @@ public class App : AppBase
     /// <summary>
     /// Gets the settings for the application.
     /// </summary>
-    public AppSettings Settings { get; private set; } = default!;
+    public AppSettings Settings { get; private set; } = new();
 
     private void LoadCrystalData()
     {
