@@ -36,7 +36,7 @@ public partial class SettingsState : ObservableObject, IState
     {
         try
         {
-            System.Diagnostics.Process.Start("Explorer.exe", this.app.DataFolder);
+            System.Diagnostics.Process.Start("Explorer.exe", this.app.DataDirectory);
         }
         catch
         {
@@ -51,7 +51,7 @@ public partial class SettingsState : ObservableObject, IState
             App.Settings.Culture = "ja";
         }
 
-        HashedString.ChangeCulture(App.Settings.Culture);
+        HashedString.TrySetCurrentCulture(App.Settings.Culture);
         Arc.WinUI.Stringer.Refresh();*/
 
         // this.GetPresentationService<IMessageDialog>().Show(Hashed.App.Name, Hashed.App.Description);
@@ -66,7 +66,7 @@ public partial class SettingsState : ObservableObject, IState
         }
 
         this.appSettings.Culture = language;
-        HashedString.ChangeCulture(this.appSettings.Culture);
+        HashedString.TrySetCurrentCulture(this.appSettings.Culture);
         Arc.WinUI.Stringer.Refresh();
         this.SetLanguageText();
     }

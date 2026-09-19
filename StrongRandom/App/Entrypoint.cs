@@ -28,7 +28,7 @@ public static partial class Entrypoint
     {
         PrepareDataFolder();
         if (appMutex is not null &&
-            UiHelper.PreventMultipleInstances(appMutex))
+            UIHelper.TryActivateRunningInstance(appMutex))
         {
             return;
         }
@@ -58,11 +58,15 @@ public static partial class Entrypoint
                     await crystalControl.StoreAndRip();
                 }
 
-                ThreadCore.Root.Terminate();
-                await ThreadCore.Root.WaitForTerminationAsync(-1);
+                if (product is not null)
+                {
+                    product.Context.ExecutionRoot.RequestTermination();
+                    await product.Context.ExecutionRoot.WaitForTerminationAsync(-1);
+                }
+
                 if (product?.Context.ServiceProvider.GetService<LogUnit>() is { } logUnit)
                 {
-                    await logUnit.FlushAndTerminate();
+                    await logUnit.FlushAndTerminateAsync();
                 }
             }).Wait();
         }

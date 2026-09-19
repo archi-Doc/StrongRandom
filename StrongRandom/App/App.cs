@@ -31,7 +31,7 @@ namespace StandardWinUI;
 
 // AppSettings manages the application's settings.
 // IApp.GetService<T>() is used to retrieve a service of type T.
-// IApp.TryExit() attempts to exit the app, while IApp.Exit() exits the app without confirmation.
+// IApp.TryExitAsync() attempts to exit the app, while IApp.Exit() exits the app without confirmation.
 // NaviWindow_Closed() is called when the main window is closed.
 
 /// <summary>
@@ -69,7 +69,7 @@ public class App : AppBase
             LanguageList.Add("ja", "Language.Ja");
 
             var asm = Assembly.GetExecutingAssembly();
-            LanguageList.LoadHashedString(asm);
+            LanguageList.LoadHashedStrings(asm);
             HashedString.LoadAssembly("en", asm, "Resources.Strings.License.tinyhand"); // license
         }
         catch
@@ -93,12 +93,12 @@ public class App : AppBase
                 }
             }
 
-            HashedString.ChangeCulture(this.Settings.Culture);
+            HashedString.TrySetCurrentCulture(this.Settings.Culture);
         }
         catch
         {
             this.Settings.Culture = DefaultCulture;
-            HashedString.ChangeCulture(this.Settings.Culture);
+            HashedString.TrySetCurrentCulture(this.Settings.Culture);
         }
     }
 
@@ -108,12 +108,12 @@ public class App : AppBase
     public override Window GetMainWindow()
         => this.GetService<NaviWindow>();
 
-    public override Task<bool> TryExit(CancellationToken cancellationToken = default)
+    public override Task<bool> TryExitAsync(CancellationToken cancellationToken = default)
     {
-        return this.UiDispatcherQueue.EnqueueAsync(async () =>
+        return this.UIDispatcherQueue.EnqueueAsync(async () =>
         {
             var result = await this.GetService<IMessageDialogService>().ShowMessageDialogAsync(0, Hashed.Dialog.Exit, Hashed.Dialog.Yes, Hashed.Dialog.No, 0, cancellationToken);
-            if (result.TryGetSingleResult(out var r) && r == ContentDialogResult.Primary)
+            if (result.TryGetFirst(out var r) && r == ContentDialogResult.Primary)
             {// Exit
                 this.Exit();
                 return true;
@@ -130,8 +130,8 @@ public class App : AppBase
     public App(IServiceProvider serviceProvider)
         : base(serviceProvider)
     {
-        this.DataFolder = Entrypoint.DataFolder;
-        this.UiDispatcherQueue = Entrypoint.UiDispatcherQueue;
+        this.DataDirectory = Entrypoint.DataFolder;
+        this.UIDispatcherQueue = Entrypoint.UiDispatcherQueue;
 
         this.LoadStrings();
         this.LoadCrystalData();

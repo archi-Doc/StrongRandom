@@ -32,23 +32,23 @@ public partial class NaviWindow : WindowEx, IMessageDialogService
         this.Closed += this.NaviWindow_Closed;
         this.AppWindow.Closing += this.AppWindow_Closing;
 
-        this.contentFrame.Navigating += app.NavigatingHandler; // Frame navigation does not support a DI container, hook into the Navigating event to create instances using a DI container.
+        this.contentFrame.Navigating += app.OnFrameNavigating; // Frame navigation does not support a DI container, hook into the Navigating event to create instances using a DI container.
 
-        this.LoadWindowPlacement(this.appSettings.WindowPlacement);
+        this.ApplyWindowPlacement(this.appSettings.WindowPlacement);
         this.nvHome.IsSelected = true;
     }
 
     #region IBasicPresentationService
 
-    Task<RadioResult<ContentDialogResult>> IMessageDialogService.Show(string title, string content, string primaryCommand, string? cancelCommand, string? secondaryCommand, CancellationToken cancellationToken)
-        => this.app.UiDispatcherQueue.EnqueueAsync(() => this.ShowMessageDialogAsync(title, content, primaryCommand, cancelCommand, secondaryCommand, cancellationToken));
+    Task<RadioResult<ContentDialogResult>> IMessageDialogService.ShowAsync(string title, string content, string primaryCommand, string? cancelCommand, string? secondaryCommand, CancellationToken cancellationToken)
+        => this.app.UIDispatcherQueue.EnqueueAsync(() => this.ShowMessageDialogAsync(title, content, primaryCommand, cancelCommand, secondaryCommand, cancellationToken));
 
     #endregion
 
     private async void AppWindow_Closing(AppWindow sender, AppWindowClosingEventArgs args)
     {// The close button of the Window was pressed.
         // args.Cancel = true; // Since the Closing function isn't awaiting, I'll cancel first. Sorry for writing such crappy code.
-        // await this.TryExit();
+        // await this.TryExitAsync();
 
         this.app.Exit();
     }
@@ -60,7 +60,7 @@ public partial class NaviWindow : WindowEx, IMessageDialogService
     private void NaviWindow_Closed(object sender, WindowEventArgs args)
     {
         // Exit1
-        this.appSettings.WindowPlacement = this.SaveWindowPlacement();
+        this.appSettings.WindowPlacement = this.GetWindowPlacement();
     }
 
     private async void nvSample_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -85,6 +85,6 @@ public partial class NaviWindow : WindowEx, IMessageDialogService
 
     private async void nvExit_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
     {
-        await this.app.TryExit();
+        await this.app.TryExitAsync();
     }
 }

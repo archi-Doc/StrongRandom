@@ -36,7 +36,7 @@ public sealed partial class SettingsPage : Page
         var item = new MenuFlyoutItem
         {
             // DataContext = this.ViewModel,
-            Text = text, // $"{{Arc:Stringer Source=Settings.Language}}",
+            Text = text, // $"{{Arc:Stringer Key=Settings.Language}}",
             Tag = language,
             Command = this.State.SelectLanguageCommand,
             CommandParameter = language,
